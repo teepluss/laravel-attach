@@ -1,5 +1,5 @@
 <?php
-
+ 
 class Attach {
 	
 	/**
@@ -299,7 +299,6 @@ class Attach {
 		// Append path with file name.
 		$file_path = $path.$file_base_name;
 
-		
 		// Mime type.
 		$mime = File::mime($file_extension);
 		
