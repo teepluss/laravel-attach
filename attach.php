@@ -56,12 +56,6 @@ class Attach {
 		$this->config = $config;
 	}
 	
-	public function __get($method)
-	{
-		//echo $method; exit(0);
-		return 'asdasdasd';
-	}
-	
 	/**
 	 * Inject config.
 	 *
