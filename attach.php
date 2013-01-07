@@ -47,6 +47,7 @@ class Attach {
 	 */
 	public function __construct($params = array())
 	{
+		// Get config from file.
 		$config = Config::get('attach::attach');
 		
 		// Merge inject parameters with default config.
@@ -55,7 +56,7 @@ class Attach {
 		// Config to use with process.
 		$this->config = $config;
 	}
-	
+
 	/**
 	 * Inject config.
 	 *
@@ -63,8 +64,18 @@ class Attach {
 	 * @return  Attach
 	 */
 	public static function inject($params = array())
-	{		
-		return new static($params);		
+	{	
+		static $instance = null;
+		if (is_null($instance))
+		{	
+			$instance = new static($params);	
+		}
+		else
+		{
+			// Merge config from existing.
+			$instance->config = array_merge($instance->config, $params);
+		}
+		return $instance;
 	}
 	
 	/**
