@@ -142,7 +142,7 @@ $attach = Attach::inject(array(
 	'remote'     => preg_match('|^http|', $input) ? true : false,
 	
 	// Scales to resize.
-	'scales' => array(
+	'scales' 	 => array(
 		'wm' => array(260, 180),
 		'wl' => array(300, 200),
 		'wx' => array(360, 270),
@@ -175,6 +175,9 @@ $attach = Attach::inject(array(
 
 // Specific sizes.
 //->add($input)->upload()->resize(array('l', 'm', 's'));
+
+// For upload without resize.
+//->add($input)->upload();
 
 
 // You still can get the results.
