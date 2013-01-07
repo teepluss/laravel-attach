@@ -138,20 +138,36 @@ $user_id = 1111;
 
 // Inject a config and upload with resize.
 $attach = Attach::inject(array(
+	// For http upload set remote TRUE.
 	'remote'     => preg_match('|^http|', $input) ? true : false,
+	
+	// Path extend to base.
 	'subpath'    => function() use ($user_id)
 	{
 		return 'uploads/'.$user_id;
 	},
+	
+	// On each upload file.
 	'onUpload'   => function($result)
 	{
 		echo '<pre>'.print_r($result, true).'<pre>';
 	},
+	
+	// On complete all upload files.
 	'onComplete' => function($results)
 	{
 		echo '<pre>'.print_r($results, true).'<pre>';
 	}
 ))->add($input)->upload()->resize();
+
+
+// You still can get the results.
+/*$attach->onComplete(function($results) 
+{
+	echo '<pre>'.print_r($results, true).'<pre>';
+});*/
+
+// Removal and Resize for a specific file see on example.
 ```
 
 ## Examples
