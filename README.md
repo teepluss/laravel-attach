@@ -126,14 +126,17 @@ return array(
 ## Example Usage 
 
 ```php
+
+// $_FILES['userfiles'];
 $input = 'userfile';
 
 // OR Remote upload.
 		
-//$input = 'http://farm9.staticflickr.com/8348/8248740315_2299c940a9.jpg';
+// $input = 'http://farm9.staticflickr.com/8348/8248740315_2299c940a9.jpg';
 
 $user_id = 1111;
 
+// Inject a config and upload with resize.
 $attach = Attach::inject(array(
 	'remote'     => preg_match('|^http|', $input) ? true : false,
 	'subpath'    => function() use ($user_id)
