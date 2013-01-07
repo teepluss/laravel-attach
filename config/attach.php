@@ -73,7 +73,7 @@ return array(
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Callback on each file uplaoded.
+	| Callback on each file uploaded.
 	|--------------------------------------------------------------------------
 	|
 	| This should be closure to listen when each file uploaded. 
@@ -84,7 +84,7 @@ return array(
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Callback on all files uplaoded.
+	| Callback on all files uploaded.
 	|--------------------------------------------------------------------------
 	|
 	| This should be closure to listen when all files uploaded. 
