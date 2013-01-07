@@ -141,6 +141,19 @@ $attach = Attach::inject(array(
 	// For http upload set remote TRUE.
 	'remote'     => preg_match('|^http|', $input) ? true : false,
 	
+	// Scales to resize.
+	'scales' => array(
+		'wm' => array(260, 180),
+		'wl' => array(300, 200),
+		'wx' => array(360, 270),
+		'ww' => array(260, 120),
+		'ws' => array(160, 120),
+		'l'  => array(200, 200),
+		'm'  => array(125, 125),
+		's'  => array(64, 64),
+		'ss' => array(45, 45)
+	),
+	
 	// Path extend to base.
 	'subpath'    => function() use ($user_id)
 	{
@@ -158,7 +171,10 @@ $attach = Attach::inject(array(
 	{
 		echo '<pre>'.print_r($results, true).'<pre>';
 	}
-))->add($input)->upload()->resize();
+))->add($input)->upload()->resize(); // uplaod and resize all sizes.
+
+// Specific sizes.
+//->add($input)->upload()->resize(array('l', 'm', 's'));
 
 
 // You still can get the results.
