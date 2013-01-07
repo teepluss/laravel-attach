@@ -171,7 +171,7 @@ $attach = Attach::inject(array(
 	{
 		echo '<pre>'.print_r($results, true).'<pre>';
 	}
-))->add($input)->upload()->resize(); // uplaod and resize all sizes.
+))->add($input)->upload()->resize(); // upload and resize all sizes.
 
 // Specific sizes.
 //->add($input)->upload()->resize(array('l', 'm', 's'));
